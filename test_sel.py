@@ -1,9 +1,13 @@
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
+
+options = Options()
+options.headless = True
 
 try:
-	browser = webdriver.Firefox()
-	browser.get('http://www.ubuntu.com/')
-	browser.close()
+	driver = webdriver.Firefox(options=options)
+	driver.get('http://www.ubuntu.com/')
+	driver.close()
 except Exception as e:
 	print(e)
 
